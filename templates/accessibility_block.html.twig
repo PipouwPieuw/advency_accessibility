@@ -1,0 +1,116 @@
+<section id="accessibility_settings">
+	<div id="accessibility_container">
+		<div id="accessibility_left">
+			<span class="block_title title4 underline">{% trans %}Accessibility settings{% endtrans %}</span>
+			<div class="accessibility_item">
+				<span class="block_label">{% trans %}Text size{% endtrans %}</span>
+				<div class="accessibility_radio_wrapper default">
+					<input type="radio" id="text_size_XS" value="XS" name="font_size" class="default_radio"/>
+					<label for="text_size_XS">XS</label>
+					<input type="radio" id="text_size_S" value="S" name="font_size" class="default_radio default_value" checked/>
+					<label for="text_size_S">S</label>
+					<input type="radio" id="text_size_M" value="M" name="font_size" class="default_radio"/>
+					<label for="text_size_M">M</label>
+					<input type="radio" id="text_size_L" value="L" name="font_size" class="default_radio"/>
+					<label for="text_size_L">L</label>
+					<input type="radio" id="text_size_XL" value="XL" name="font_size" class="default_radio"/>
+					<label for="text_size_XL">XL</label>
+				</div>
+			</div>
+			<div class="accessibility_item">
+				<span class="block_label">{% trans %}Line spacing{% endtrans %}</span>
+				<div class="accessibility_radio_wrapper default">
+					<input type="radio" id="line_height_10" value="10" name="line_height" class="default_radio"/>
+					<label for="line_height_10">1</label>
+					<input type="radio" id="line_height_12" value="12" name="line_height" class="default_radio default_value" checked/>
+					<label for="line_height_12">1.2</label>
+					<input type="radio" id="line_height_14" value="14" name="line_height" class="default_radio"/>
+					<label for="line_height_14">1.4</label>
+					<input type="radio" id="line_height_16" value="16" name="line_height" class="default_radio"/>
+					<label for="line_height_16">1.6</label>
+					<input type="radio" id="line_height_18" value="18" name="line_height" class="default_radio"/>
+					<label for="line_height_18">1.8</label>
+					<input type="radio" id="line_height_20" value="20" name="line_height" class="default_radio"/>
+					<label for="line_height_20">2</label>
+				</div>
+			</div>
+			<div class="accessibility_item themes">
+				<span class="block_label">{% trans %}Contrasts{% endtrans %}</span>
+				<div class="accessibility_radio_wrapper contrast">
+					<input type="radio" id="contrast_theme-light" value="theme-light" name="contrast" class="contrast_radio default default_value" checked/>
+					<label for="contrast_theme-light">
+						<span class="icon">a</span>
+						<span class="text">{% trans %}Default{% endtrans %}</span>
+					</label>
+					<input type="radio" id="contrast_theme-dark" value="theme-dark" name="contrast" class="contrast_radio dark"/>
+					<label for="contrast_theme-dark">
+						<span class="icon">a</span>
+						<span class="text">{% trans %}Dark{% endtrans %}</span>
+					</label>
+					<input type="radio" id="contrast_theme-contrasting" value="theme-contrasting" name="contrast" class="contrast_radio contrasting"/>
+					<label for="contrast_theme-contrasting">
+						<span class="icon">a</span>
+						<span class="text">{% trans %}Contrasted{% endtrans %}</span>
+					</label>
+				</div>
+			</div>
+		</div>
+		<div id="accessibility_right">
+			<div class="accessibility_item">
+				<span class="block_label">{% trans %}Underline action buttons{% endtrans %}</span>
+				<input type="checkbox" id="emphasize_buttons" name="emphasize_buttons" class="toggle"/>
+				<label for="emphasize_buttons"></label>
+			</div>
+			<div class="accessibility_item">
+				<span class="block_label">{% trans %}View table of contents{% endtrans %}</span>
+				<input type="checkbox" id="display_table_contents" name="display_table_contents" class="toggle"/>
+				<label for="display_table_contents"></label>
+			</div>
+			<div class="accessibility_item">
+				<span id="reset_accessibility">{% trans %}Reset the default values.{% endtrans %}</span>
+			</div>
+			<div class="accessibility_item">
+				<span id="accessibility_contact">{% trans %}Having trouble using our site?{% endtrans %} <span class="link" adv-of="{% trans %}==AdjFGdu92YtUmck5WZyB3L{% endtrans %}" style="cursor: pointer; text-decoration: underline;">{% trans %}Contact us{% endtrans %}</span> !</span>
+			</div>
+		</div>
+		<div id="accessibility_table_contents">
+			<div class="inner">
+				<span class="table_contents_title">{% trans %}Table of contents{% endtrans %}</span>
+				<nav id="table_contents">
+					<ul>
+						{# <li>
+							<span class="table_contents_item">{% trans %}Account Manager Menu{% endtrans %}</span>
+						</li>
+						<li>
+							<span class="table_contents_item">{% trans %}Main navigation{% endtrans %}</span>
+						</li>
+						<li>
+							<span class="table_contents_item">{% trans %}The agency{% endtrans %}</span>
+							<ul>
+								<li>
+									<span class="table_contents_item sub">{% trans %}Presentation{% endtrans %}</span>
+								</li>
+								<li>
+									<span class="table_contents_item sub">{% trans %}Agency history{% endtrans %}</span>
+								</li>
+								<li>
+									<span class="table_contents_item sub">{% trans %}Our team{% endtrans %}</span>
+								</li>
+								<li>
+									<span class="table_contents_item sub">{% trans %}Map{% endtrans %}</span>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<span class="table_contents_item">{% trans %}Contact{% endtrans %}</span>
+						</li>
+						<li>
+							<span class="table_contents_item">{% trans %}Footer{% endtrans %}</span>
+						</li> #}
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<i tabindex="0" id="accessibility_close" class="webfont webfont-close"></i>
+	</div>
+</section>

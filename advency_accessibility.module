@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Module file.
+ */
+
+
+/**
+ * {@inheritdoc}
+ */
+function advency_accessibility_theme() {
+  return [
+    'accessibility_block' => [
+      'template' => 'accessibility_block',
+      'variables' => [
+        'items' => NULL,
+      ],
+    ],
+    'accessibility_trigger_block' => [
+      'template' => 'accessibility_trigger_block',
+      'variables' => [
+        'items' => NULL,
+      ],
+    ],
+    'accessibility_quick_access' => [
+      'template' => 'accessibility_quick_access',
+      'variables' => [
+        'items' => NULL,
+      ],
+    ],
+  ];
+}
