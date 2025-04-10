@@ -1,0 +1,98 @@
+html {
+    // FONT SIZE
+    font-size: 62.5%;
+    &[data-fos="XS"] {
+        font-size: 55%;
+    }
+    &[data-fos="S"] {
+        font-size: 62.5%;
+    }
+    &[data-fos="M"] {
+        font-size: 70%;
+    }
+    &[data-fos="L"] {
+        font-size: 80%;
+    }
+    &[data-fos="XL"] {
+        font-size: 90%;
+    }
+
+    // LINE HEIGHT
+    --line-height: 1;    
+    &[data-lh="10"] {
+        --line-height: 0.8;
+    }
+    &[data-lh="12"] {
+        --line-height: 1;
+    }
+    &[data-lh="14"] {        
+        --line-height: 1.2;
+    }
+    &[data-lh="16"] {        
+        --line-height: 1.4;
+    }
+    &[data-lh="18"] {        
+        --line-height: 1.6;
+    }
+    &[data-lh="20"] {        
+        --line-height: 1.8;
+    }
+
+    // EMPHASIZE BUTTONS
+    &[data-emphasize="true"] a {
+        text-decoration: underline;
+    }
+
+    // COLORS LIGHT THEME
+    &:not([data-theme="theme-dark"]) {
+        --color-neutral1: #292929;
+        --color-neutral2: #ffffff;
+        --color-neutral3: #FCFCFC;
+        --color-neutral4: #696969;
+        --color-neutral5: #DEDEDE;
+        --color-primary: #00CF76;
+        --color-primary-5: #F2FCF8;
+        --color-primary-40: #99ECC8;
+        --color-secondary: #FF8143;
+        --color-secondary-5: #FFF8F5;
+        --color-semantic1: #FF4343;
+        --color-semantic2: #FEDC2A;
+        --color-boxShadow: rgba(204, 204, 204, 0.25);
+        --color-dropShadow: rgba(156, 156, 156, 0.15);
+    }
+    // COLORS DARK THEME
+    &[data-theme="theme-dark"] {
+        --color-neutral1: #FAFAFA;
+        --color-neutral2: #292929;
+        --color-neutral3: #262626;
+        --color-neutral4: #B5B5B5;
+        --color-neutral5: #DEDEDE;
+        --color-primary: #00CF76;
+        --color-primary-5: #F2FCF8;
+        --color-primary-40: #99ECC8;
+        --color-secondary: #FF8143;
+        --color-secondary-5: #FFD8C7;
+        --color-semantic1: #FF4343;
+        --color-semantic2: #FEDC2A;
+        --color-boxShadow: rgba(0, 0, 0, 0.25);
+        --color-dropShadow: rgba(0, 0, 0, 0.15);
+    }
+
+    // Light/dark mode elements
+    &:not([data-theme="theme-dark"]) .dark_element,
+    &[data-theme="theme-dark"] .light_element {
+        display: none !important;
+    }
+}
+
+body {	
+
+    &.accessibilitySwitch {
+
+    	*,
+    	*:before,
+    	*:after {
+       		transition: none !important;
+       	}
+    }
+}

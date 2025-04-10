@@ -2,6 +2,6 @@ advency_accessibility:
   version: 1.x
   css:
     theme:
-      dist/style.css: {}
+      # dist/style.css: {}
   js:
     src/js/index.js: {}

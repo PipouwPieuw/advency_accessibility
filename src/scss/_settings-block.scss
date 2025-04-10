@@ -1,0 +1,322 @@
+#accessibility_settings {
+	padding-top: 2rem;
+	padding-bottom: 5rem;
+	border-bottom: 0.1rem solid $primary1;
+
+	#accessibility_container {
+		max-width: 165rem;
+	    margin: auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		position: relative;
+
+		#accessibility_close {
+			position: absolute;
+			right: 1.8rem;
+			top: 1.8rem;
+			font-size: 1.8rem;
+			cursor: pointer;
+			@include transition($transition);
+
+			&:hover {
+				color: $primary1;
+			}
+		}
+
+		#accessibility_left {
+			padding-right: 10rem;
+		}
+
+		#accessibility_right {
+			margin-top: 5.8rem;
+			max-width: 29.5rem;
+		}
+
+		.block_title {
+			display: block;
+			margin-bottom: 3rem;
+		}
+
+		.accessibility_item {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+
+			&:not(:last-child) {
+				margin-bottom: 3rem;
+			}
+		}
+
+		.block_label {
+			display: block;
+			@include overlineMedium();
+			text-transform: uppercase;
+			margin-bottom: 1rem;
+		}
+
+		.accessibility_radio_wrapper {
+			display: flex;
+			flex-wrap: wrap;
+
+			&.default {
+				border: 0.1rem solid $neutral5;
+				border-radius: 0.5rem;
+				overflow: hidden;
+			}
+		}
+
+		input[type=radio] {
+			position: absolute;
+			pointer-events: none;
+			opacity: 0;
+
+			&.default_radio {
+
+				&+ label {
+					height: 5.6rem;
+					width: 5.8rem;
+					@include flex-center;
+					@include bodyLarge;
+					cursor: pointer;
+				}
+
+				&:checked + label {
+					background: $neutral1;
+					color: $neutral2;
+				}
+			}
+
+			&.contrast_radio {
+
+				&+ label {
+					border: 0.1rem solid $neutral5;
+					border-radius: 0.5rem;
+					overflow: hidden;
+					display: flex;
+					align-items: center;
+					height: 5.8rem;
+					padding-left: 0.3rem;
+					cursor: pointer;
+					width: 16rem;
+					text-align: center;
+
+					&:not(:last-child) {
+						margin-right: 1.5rem;
+					}
+
+					.icon {
+						content: "a";
+						height: 5rem;
+						flex: 0 0 5rem;
+						@include bodyLarge($neutral1, 600);
+						text-transform: none;
+						@include flex-center;
+						border-radius: 0.5rem;
+					}
+
+					.text {
+						@include overlineSmall($neutral1, 600);
+						text-transform: uppercase;
+						flex: 1;
+					}
+				}
+
+				&.default {
+
+					&+ label {
+
+						.icon {
+							border: 0.1rem solid $neutral1;
+							position: relative;
+							overflow: hidden;
+
+							&:before {
+								content: "";
+								position: absolute;
+								z-index: 1;
+								top: -1rem;
+								bottom: -1rem;
+								left: 0;
+								right: 0;
+								border-right: 0.1rem dashed $primary1;
+								width: 0.1rem;
+								margin: auto;
+								@include rotate(-45);
+							}
+						}
+					}
+				}
+
+				&.dark {
+
+					&+ label .icon {
+						background: $neutral1;
+						color: $neutral2;
+					}
+				}
+
+				&.contrasting {
+
+					&+ label .icon {
+						background: $semantic2;
+					}
+				}
+
+				&:checked + label {
+					border-color: $neutral1;
+				}
+			}
+		}
+
+		input[type="checkbox"].toggle {
+			@include toggleBox;
+		}
+
+		#reset_accessibility {
+			display: inline-block;
+			margin-top: 2rem;
+			// @include linkMedium($neutral4);
+			text-decoration: underline;
+			cursor: pointer;
+			@include transition($transition);
+
+			&:hover {
+				color: $primary1;
+			}
+		}
+
+		#accessibility_contact {
+			@include bodySmall;
+
+			a {
+				display: inline-block;
+				text-decoration: underline;
+
+				&:hover {
+					color: $primary1;
+				}
+			}
+		}
+
+		#accessibility_table_contents {
+			margin-top: 5.8rem;
+			padding-left: 5rem;
+			margin-left: 5rem;
+			border-left: 0.1rem dashed $neutral4;
+
+			&:not(.active) {
+				display: none;
+			}
+
+			.table_contents_title {
+				display: block;
+				@include subtitle($primary1, 600);
+				margin-bottom: 1.5rem;
+			}
+
+			li {
+
+				&:not(:last-child) {
+					margin-bottom: 0.5rem;
+				}
+
+				> ul {
+					margin-left: 3rem;
+				}
+			}
+
+			.table_contents_item {
+				display: block;
+				position: relative;
+				@include bodyMedium;
+				padding-left: 2rem;
+
+				&:not(.sub) {
+					font-weight: 600;
+				}
+
+				&:before {
+					content: "";
+					position: absolute;
+					width: 0.4rem;
+					height: 0.4rem;
+					border-radius: 50%;
+					background: $neutral1;
+					left: 0.8rem;
+					top: 1.2rem;
+
+					@include breakpoint(small down) {
+						top: 1rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+#header.home:not(.sup):not(.shown) #accessibility_settings {
+
+	#accessibility_container {
+		color: $neutral7;
+
+		.block_title,
+		.block_label {
+			color: $neutral6;
+		}
+
+		input[type=radio] {
+
+			&.default_radio {
+
+				&+ label {
+					color: $neutral6;
+				}
+
+				&:checked + label {
+					background: $neutral6;
+					color: $neutral7;
+				}
+			}
+
+			&.contrast_radio {
+
+				&+ label {
+
+					.icon,
+					.text {
+						color: $neutral6;
+					}
+				}
+
+				&.default + label .icon {
+					border-color: $neutral6;
+				}
+
+				&.dark + label .icon {
+					background: $neutral6;
+					color: $neutral7;
+				}
+
+				&:checked + label {
+					border-color: $neutral6;
+				}
+			}
+		}
+
+		#accessibility_contact {
+			color: $neutral6;
+		}
+
+		#accessibility_table_contents {
+
+			.table_contents_item {
+				color: $neutral6;
+
+				&:before {
+					background: $neutral6;
+				}
+			}
+		}
+	}
+}

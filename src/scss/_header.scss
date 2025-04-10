@@ -1,0 +1,10 @@
+#header {
+
+    &:not(.accessibility_active) {
+        transform: translateY(calc(-100% + #{$header-height}));
+    }
+
+    &.transitionning {
+        @include transition($transition);
+    }
+}

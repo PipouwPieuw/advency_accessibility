@@ -83,12 +83,12 @@ jQuery(document).ready(function($) {
     /* TRIGGER ACCESSIBILITY */
     $('#accessibility_trigger').click(function() {
         switchTransition();
-        $('#header').toggleClass('accessibility_active');
+        $('#header_accessibility').toggleClass('accessibility_active');
     });
     $('#accessibility_trigger').keydown(function(e) {
         if(e.keyCode == 13){
             switchTransition();
-            $('#header').toggleClass('accessibility_active');
+            $('#header_accessibility').toggleClass('accessibility_active');
         }
     });
     $('#accessibility_close').click(function() {
@@ -102,7 +102,7 @@ jQuery(document).ready(function($) {
 
     function closeAccessibility() {        
         switchTransition();
-        $('#header').removeClass('accessibility_active');
+        $('#header_accessibility').removeClass('accessibility_active');
     }
 
     /* TRANSITION FUNCTIONS */
@@ -114,17 +114,17 @@ jQuery(document).ready(function($) {
         }, 200);
     }
     function switchTransition() {
-        $('#header').addClass('transitionning');        
+        $('#header_accessibility').addClass('transitionning');        
 
         setTimeout(function() {
-            $('#header').removeClass('transitionning');
+            $('#header_accessibility').removeClass('transitionning');
         }, 200);
     }
 
     /* TABLE OF CONTENTS */
     // CONSTRUCT TABLE
     var hCounter = 1;
-    $('#wrapper').find(':header:not(.visually-hidden)').each(function() {
+    $('.page_wrapper').find(':header:not(.visually-hidden)').each(function() {
         var elemTag = $(this)[0].tagName.toLowerCase();
         var tagNumber = parseInt(elemTag.replace('h', ''));
         var elemMargin = (tagNumber - 1) * 2;
@@ -140,7 +140,7 @@ jQuery(document).ready(function($) {
     // CLOSE HEADER ON CLICK
     $('#table_contents .table_contents_item').click(function() {
         switchTransition();
-        $('#header').removeClass('accessibility_active');
+        $('#header_accessibility').removeClass('accessibility_active');
     });
 
     // TOGGLE TABLE
@@ -154,28 +154,28 @@ jQuery(document).ready(function($) {
     });
 
     // LABEL COLOR ON SCROLL
-    setLabelColor();
-    $(window).scroll(function() {
-        setLabelColor();
-    });
+    // setLabelColor();
+    // $(window).scroll(function() {
+    //     setLabelColor();
+    // });
 
-    function setLabelColor() {
-        var windowWidth = $(window).width();
-        var footerOffset = $('#footer_bottom').offset().top;
-        var elemOffset = 0 + $('#accessibility_trigger .button_text').height() / 2;
-        if (windowWidth > 1023) {
-            elemOffset += 49;
-        }
-        else if (windowWidth > 639) {
-            elemOffset += 19;
-        }
-        if (($(window).scrollTop() <= elemOffset && $('#home_banner').length) || footerOffset < $(window).scrollTop() + $(window).height() - elemOffset) {
-           $('#accessibility_trigger .button_text').addClass('white');
-        }
-        else {            
-           $('#accessibility_trigger .button_text').removeClass('white');
-        }
-    }
+    // function setLabelColor() {
+    //     var windowWidth = $(window).width();
+    //     var footerOffset = $('#footer_bottom').offset().top;
+    //     var elemOffset = 0 + $('#accessibility_trigger .button_text').height() / 2;
+    //     if (windowWidth > 1023) {
+    //         elemOffset += 49;
+    //     }
+    //     else if (windowWidth > 639) {
+    //         elemOffset += 19;
+    //     }
+    //     if (($(window).scrollTop() <= elemOffset && $('#home_banner').length) || footerOffset < $(window).scrollTop() + $(window).height() - elemOffset) {
+    //        $('#accessibility_trigger .button_text').addClass('white');
+    //     }
+    //     else {            
+    //        $('#accessibility_trigger .button_text').removeClass('white');
+    //     }
+    // }
 
     // QUICK ACCESS
     $('#quick_access a').keydown(function(e) {
@@ -190,7 +190,7 @@ jQuery(document).ready(function($) {
     $(document).keydown(function(e) {
         if(e.keyCode == 27){
             $(".dialog.dialog--open").removeClass("dialog--open").addClass("dialog--close");
-            if($('#header').hasClass('accessibility_active')) {
+            if($('#header_accessibility').hasClass('accessibility_active')) {
                 closeAccessibility();
             }
         }
