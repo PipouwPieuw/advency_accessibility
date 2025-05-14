@@ -85,12 +85,12 @@ jQuery(document).ready(function($) {
         switchTransition();
         $('#header_accessibility').toggleClass('accessibility_active');
     });
-    $('#accessibility_trigger').keydown(function(e) {
-        if(e.keyCode == 13){
-            switchTransition();
-            $('#header_accessibility').toggleClass('accessibility_active');
-        }
-    });
+    // $('#accessibility_trigger').keydown(function(e) {
+    //     if(e.keyCode == 13){
+    //         switchTransition();
+    //         $('#header_accessibility').toggleClass('accessibility_active');
+    //     }
+    // });
     $('#accessibility_close').click(function() {
         closeAccessibility();
     });
