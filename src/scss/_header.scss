@@ -1,10 +1,25 @@
 #header {
+    position: fixed;
+    z-index: 100;
+    top: var(--toolbarOffset);
+    left: 0;
+    right: 0;
+    max-height: calc(100dvh - var(--toolbarOffset));
+    overflow: auto;
+    background: var(--neutral8);
+    color: var(--neutral1);
+    border-bottom: 1px solid var(--neutral5);
 
     &:not(.accessibility_active) {
-        transform: translateY(calc(-100% + #{$header-height}));
+        transform: translateY(-100%);
+        pointer-events: none;
     }
 
     &.transitionning {
-        @include transition($transition);
+        @include transition;
+    }
+
+    &:not(.accessibility_active):not(.transitionning) {
+        display: none;
     }
 }

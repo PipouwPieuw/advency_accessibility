@@ -167,10 +167,20 @@
 					border-color: $neutral1;
 				}
 			}
+
+			&:focus-visible + label {
+				outline: 5px auto Highlight;
+	  			outline: 5px auto -webkit-focus-ring-color;
+			}
 		}
 
 		input[type="checkbox"].toggle {
 			@include toggleBox;
+
+			&:focus-visible + label {
+				outline: 5px auto Highlight;
+  				outline: 5px auto -webkit-focus-ring-color;
+			}
 		}
 
 		#reset_accessibility {

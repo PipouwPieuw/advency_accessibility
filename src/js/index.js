@@ -124,7 +124,7 @@ jQuery(document).ready(function($) {
     /* TABLE OF CONTENTS */
     // CONSTRUCT TABLE
     var hCounter = 1;
-    $('.page_wrapper').find(':header:not(.visually-hidden)').each(function() {
+    $('main').find(':header:not(.visually-hidden)').each(function() {
         var elemTag = $(this)[0].tagName.toLowerCase();
         var tagNumber = parseInt(elemTag.replace('h', ''));
         var elemMargin = (tagNumber - 1) * 2;
