@@ -181,7 +181,7 @@ jQuery(document).ready(function($) {
     $('#quick_access a').keydown(function(e) {
         if(e.keyCode == 13){
             var target = $(this).attr('href');
-            var elem = $(target).find('button, a, input:not([tabindex="-1"]), select, textarea, [tabindex]:not([tabindex="-1"])').eq(0);
+            var elem = $(target).find('button, [href], input:not([tabindex="-1"]), select, textarea, [tabindex]:not([tabindex="-1"])').eq(0);
             elem.focus();
         }
     });

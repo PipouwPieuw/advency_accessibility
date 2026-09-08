@@ -1,7 +1,9 @@
+@use '../../abstracts/abstracts' as *;
+
 #accessibility_settings {
 	padding-top: 2rem;
 	padding-bottom: 5rem;
-	border-bottom: 0.1rem solid $primary1;
+	border-bottom: 0.1rem solid $primaryMain;
 
 	#accessibility_container {
 		max-width: 165rem;
@@ -20,7 +22,7 @@
 			@include transition($transition);
 
 			&:hover {
-				color: $primary1;
+				color: $primaryMain;
 			}
 		}
 
@@ -50,7 +52,7 @@
 
 		.block_label {
 			display: block;
-			@include overlineMedium();
+			@include bodyMedium();
 			text-transform: uppercase;
 			margin-bottom: 1rem;
 		}
@@ -60,7 +62,7 @@
 			flex-wrap: wrap;
 
 			&.default {
-				border: 0.1rem solid $neutral5;
+				border: 0.1rem solid $neutral2;
 				border-radius: 0.5rem;
 				overflow: hidden;
 			}
@@ -76,9 +78,9 @@
 				&+ label {
 					height: 5.6rem;
 					width: 5.8rem;
-					@include flex-center;
-					@include bodyLarge;
+					@extend %flexCenter;
 					cursor: pointer;
+					@include bodyLarge;
 				}
 
 				&:checked + label {
@@ -90,7 +92,7 @@
 			&.contrast_radio {
 
 				&+ label {
-					border: 0.1rem solid $neutral5;
+					border: 0.1rem solid $neutral2;
 					border-radius: 0.5rem;
 					overflow: hidden;
 					display: flex;
@@ -109,14 +111,14 @@
 						content: "a";
 						height: 5rem;
 						flex: 0 0 5rem;
-						@include bodyLarge($neutral1, 600);
 						text-transform: none;
-						@include flex-center;
+						@extend %flexCenter;
 						border-radius: 0.5rem;
+						@include bodyLarge($neutral1, 600);
 					}
 
 					.text {
-						@include overlineSmall($neutral1, 600);
+						@include bodySmall;
 						text-transform: uppercase;
 						flex: 1;
 					}
@@ -139,7 +141,7 @@
 								bottom: -1rem;
 								left: 0;
 								right: 0;
-								border-right: 0.1rem dashed $primary1;
+								border-right: 0.1rem dashed $primaryMain;
 								width: 0.1rem;
 								margin: auto;
 								@include rotate(-45);
@@ -159,7 +161,7 @@
 				&.contrasting {
 
 					&+ label .icon {
-						background: $semantic2;
+						background: $semanticAlert;
 					}
 				}
 
@@ -167,20 +169,10 @@
 					border-color: $neutral1;
 				}
 			}
-
-			&:focus-visible + label {
-				outline: 5px auto Highlight;
-	  			outline: 5px auto -webkit-focus-ring-color;
-			}
 		}
 
 		input[type="checkbox"].toggle {
 			@include toggleBox;
-
-			&:focus-visible + label {
-				outline: 5px auto Highlight;
-  				outline: 5px auto -webkit-focus-ring-color;
-			}
 		}
 
 		#reset_accessibility {
@@ -192,7 +184,7 @@
 			@include transition($transition);
 
 			&:hover {
-				color: $primary1;
+				color: $primaryMain;
 			}
 		}
 
@@ -204,7 +196,7 @@
 				text-decoration: underline;
 
 				&:hover {
-					color: $primary1;
+					color: $primaryMain;
 				}
 			}
 		}
@@ -221,7 +213,7 @@
 
 			.table_contents_title {
 				display: block;
-				@include subtitle($primary1, 600);
+				@include bodyMedium;
 				margin-bottom: 1.5rem;
 			}
 
@@ -268,11 +260,11 @@
 #header.home:not(.sup):not(.shown) #accessibility_settings {
 
 	#accessibility_container {
-		color: $neutral7;
+		color: $neutral4;
 
 		.block_title,
 		.block_label {
-			color: $neutral6;
+			color: $neutral3;
 		}
 
 		input[type=radio] {
@@ -280,12 +272,12 @@
 			&.default_radio {
 
 				&+ label {
-					color: $neutral6;
+					color: $neutral3;
 				}
 
 				&:checked + label {
-					background: $neutral6;
-					color: $neutral7;
+					background: $neutral3;
+					color: $neutral4;
 				}
 			}
 
@@ -295,36 +287,36 @@
 
 					.icon,
 					.text {
-						color: $neutral6;
+						color: $neutral3;
 					}
 				}
 
 				&.default + label .icon {
-					border-color: $neutral6;
+					border-color: $neutral3;
 				}
 
 				&.dark + label .icon {
-					background: $neutral6;
-					color: $neutral7;
+					background: $neutral3;
+					color: $neutral4;
 				}
 
 				&:checked + label {
-					border-color: $neutral6;
+					border-color: $neutral3;
 				}
 			}
 		}
 
 		#accessibility_contact {
-			color: $neutral6;
+			color: $neutral3;
 		}
 
 		#accessibility_table_contents {
 
 			.table_contents_item {
-				color: $neutral6;
+				color: $neutral3;
 
 				&:before {
-					background: $neutral6;
+					background: $neutral3;
 				}
 			}
 		}

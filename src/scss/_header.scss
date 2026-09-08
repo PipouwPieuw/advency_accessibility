@@ -1,25 +1,23 @@
-#header {
+@use '../../abstracts/abstracts' as *;
+
+#header_accessibility {
     position: fixed;
-    z-index: 100;
+    z-index: 11;
     top: var(--toolbarOffset);
     left: 0;
     right: 0;
     max-height: calc(100dvh - var(--toolbarOffset));
     overflow: auto;
-    background: var(--neutral8);
-    color: var(--neutral1);
-    border-bottom: 1px solid var(--neutral5);
+    background: $primaryMain;
+    color: $neutral5;
 
     &:not(.accessibility_active) {
         transform: translateY(-100%);
         pointer-events: none;
+        opacity: 0;
     }
 
     &.transitionning {
-        @include transition;
-    }
-
-    &:not(.accessibility_active):not(.transitionning) {
-        display: none;
+        @include transition($transition);
     }
 }

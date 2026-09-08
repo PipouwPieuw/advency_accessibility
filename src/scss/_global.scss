@@ -1,4 +1,4 @@
-html {    
+html {
     // FONT SIZE
     font-size: 62.5%;
     &[data-fos="XS"] {
@@ -85,14 +85,14 @@ html {
     }
 }
 
-body {	
+body {  
 
     &.accessibilitySwitch {
 
-    	*,
-    	*:before,
-    	*:after {
-       		transition: none !important;
-       	}
+        *,
+        *:before,
+        *:after {
+            transition: none !important;
+        }
     }
 }

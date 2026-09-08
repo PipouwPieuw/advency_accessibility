@@ -1,4 +1,5 @@
-@import 'global';
-@import 'header';
-@import 'settings-block';
-@import 'trigger';
+@use 'global';
+@use 'header';
+@use 'settings-block';
+@use 'trigger';
+@use 'quick-access';

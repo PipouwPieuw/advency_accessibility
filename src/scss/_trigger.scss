@@ -1,50 +1,6 @@
+@use '../../abstracts/abstracts' as *;
+@use '../../vendors/webfont-vars' as *;
+
 #accessibility_trigger {
-	position: fixed;
-	z-index: 99;
-	left: 50px;
-	bottom: 50px;
-	@include flex-center;
-	flex-direction: column;
-	cursor: pointer;
-
-	.button_icon {
-		width: 5.6rem;
-		height: 5.6rem;
-		border: 0.1rem solid $primary1;
-		border-radius: 0.5rem;
-		@include flex-center;
-		background: $neutral2;
-		@include bgFrameImg;
-		margin-bottom: 0.5rem;
-		@include transition($transition);
-
-		i {
-			font-size: 3.2rem;
-			@include transition($transition);
-			color: $primary1;
-		}
-	}
-
-	.button_text {
-		@include buttonMedium;
-		text-transform: uppercase;
-	}
-
-	&:not(:hover) .button_icon {
-		border-color: $neutral1;
-
-		&:before {
-			left: -0.7rem;
-			top: -0.4rem;
-			@include rotate(-12);
-		}
-
-		i {
-			color: $neutral1;
-		}
-	}
-}
-
-.block-advency-accessibility-trigger {
-	position: absolute;
+	@include ctaSecondary($iconLeft: $webfont-accessibility);
 }
